@@ -8,8 +8,26 @@ const productSchema = new Schema({
         trim:true
     },
     
-    name:{
+    category:{
         type: String,
+        required: true,
+        trim:true
+    },
+
+    brand:{
+        type: String,
+        required: true,
+        trim:true
+    },
+
+    gender:{
+        type: String,
+        required: true,
+        trim:true
+    },
+
+    qty:{
+        type: Number,
         required: true,
         trim:true
     },
@@ -17,9 +35,37 @@ const productSchema = new Schema({
         type: Number,
         required: true,
         trim:true
+    },
+
+    color:{
+        type: String,
+        required: true,
+        trim:true
+    },
+
+    sizes:{
+        type: Array,
+        required: true,
+        trim:true,
+        "default" : []
+    },
+
+    shippingType:{
+        type: Array,
+        required: true,
+        trim:true,
+        "default" : []
+    },
+
+    seller:{
+        type: String,
+        required: true,
+        trim:true
     }
 
+
 },{timestamps:true})
+
 
 const product = mongoose.model('product', productSchema)
 
